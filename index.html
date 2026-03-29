@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="PhysWorld">
+  <meta name="description" content="We propose PhysWorld, a novel framework that synthesizes physics-aware demonstrations to learn efficient world models.">
+  <meta name="keywords" content="World Models, Deformable Objects, Demonstration Synthesis">
+  <meta name="author" content="Anonymous">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <!-- Academic/Research Specific (anonymized / de-identified) -->
+  <meta name="citation_title" content="PAPER_TITLE">
+  <meta name="citation_author" content="Anonymous">
+  <meta name="citation_publication_date" content="2024">
+  <meta name="citation_conference_title" content="CONFERENCE_NAME">
+  <meta name="citation_pdf_url" content="static/pdfs/paper.pdf">
+
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+  <title>PhysWorld</title>
+
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="static/images/globe.ico">
+  <link rel="apple-touch-icon" href="static/images/globe.ico">
+
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+
+  <!-- Structured Data for Academic Papers (anonymized) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "PAPER_TITLE",
+    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
+    "author": [
+      { "@type": "Person", "name": "Anonymous" },
+      { "@type": "Person", "name": "Anonymous" }
+    ],
+    "datePublished": "2024-01-01",
+    "publisher": {
+      "@type": "Organization",
+      "name": "CONFERENCE_OR_JOURNAL_NAME"
+    },
+    "url": "YOUR_PROJECT_PAGE",
+    "image": "static/images/social_preview.png",
+    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
+    "abstract": "FULL_ABSTRACT_TEXT_HERE",
+    "citation": "BIBTEX_CITATION_HERE",
+    "isAccessibleForFree": true,
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "mainEntity": {
+      "@type": "WebPage",
+      "@id": "YOUR_PROJECT_PAGE"
+    },
+    "about": [
+      { "@type": "Thing", "name": "RESEARCH_AREA_1" },
+      { "@type": "Thing", "name": "RESEARCH_AREA_2" }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-widescreen">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">
+                PhysWorld: From Real Videos to World Models of Deformable Objects via Physics-Aware Demonstration Synthesis
+              </h1>
+
+              <!-- Authors (anonymized) -->
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">Anonymous Authors</span>
+              </div>
+
+              <!-- Institutions removed for anonymity -->
+
+              <!-- arXiv / Code links removed for anonymity -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Teaser image -->
+    <section class="hero teaser">
+      <div class="container is-max-widescreen">
+        <div class="hero-body">
+          <img src="static/figures/overview_remove.jpg" alt="Research Teaser Image" style="width:100%; object-fit:contain;">
+          <h2 class="subtitle has-text-centered">
+            Overview of PhysWorld. The framework first constructs a physics-consistent digital twin
+            from videos, then uses it to generate diverse 4D demonstrations, and finally trains a GNN-based
+            world model for real-time future state prediction.
+          </h2>
+        </div>
+      </div>
+    </section>
+    <!-- End teaser -->
+
+    <!-- Paper abstract -->
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                Interactive world models that simulate object dynamics are crucial for robotics, VR, and AR. However, it remains a significant challenge to learn physics-consistent dynamics models from limited real-world video data, especially for deformable objects with spatially-varying physical properties. To overcome the challenge of data scarcity, we propose PhysWorld, a novel framework that leverages a simulator to synthesize physically plausible and diverse demonstrations to learn efficient world models. Specifically, we first construct a physics-consistent digital twin within MPM simulator via constitutive model selection and global-to-local optimization of physical properties. Subsequently, we apply part-aware perturbations to the physical properties and generate various motion patterns for the digital twin, synthesizing extensive and diverse demonstrations. Finally, using these demonstrations, we train a lightweight GNN-based world model that is embedded with physical properties. The real data is further used to refine the physical properties. PhysWorld achieves accurate and fast future predictions for various deformable objects, and also generalizes well to novel interactions. Experiments show that PhysWorld has competitive performance while enabling inference speeds 47 times faster than the recent state-of-the-art method, i.e., PhysTwin. The code and pre-trained models will be publicly available.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End paper abstract -->
+
+    <!-- Video carousel -->
+    <section class="hero is-small">
+      <div class="hero-body">
+        <div class="container">
+          <h2 class="title is-3">Action-Conditioned Future Prediction</h2>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-video1">
+              <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
+                <source src="static/videos/PRED_video/double_lift_cloth_3_0_fixed.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-video2">
+              <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
+                <source src="static/videos/PRED_video/double_stretch_zebra_0_fixed.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-video3">
+              <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
+                <source src="static/videos/PRED_video/single_clift_cloth_1_0_fixed.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-video4">
+              <video poster="" id="video4" controls muted loop height="100%" preload="metadata">
+                <source src="static/videos/PRED_video/single_clift_cloth_3_0_fixed.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-video5">
+              <video poster="" id="video5" controls muted loop height="100%" preload="metadata">
+                <source src="static/videos/PRED_video/single_lift_cloth_1_0_fixed.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-video6">
+              <video poster="" id="video6" controls muted loop height="100%" preload="metadata">
+                <source src="static/videos/PRED_video/single_lift_dinosor_0_fixed.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-video7">
+              <video poster="" id="video7" controls muted loop height="100%" preload="metadata">
+                <source src="static/videos/PRED_video/single_lift_sloth_0_fixed.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-video8">
+              <video poster="" id="video8" controls muted loop height="100%" preload="metadata">
+                <source src="static/videos/PRED_video/single_push_rope_1_0_fixed.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            Visual results of action-conditioned future prediction.
+          </h2>
+        </div>
+      </div>
+    </section>
+    <!-- End video carousel -->
+
+    <!-- Comparison carousel -->
+    <section class="hero is-small">
+      <div class="hero-body">
+        <div class="container">
+          <h2 class="title is-3">Comparison with PhysTwin</h2>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-video1">
+              <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
+                <source src="static/videos/future_prediction/double_lift_sloth_fixed.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-video2">
+              <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
+                <source src="static/videos/future_prediction/double_lift_zebra_fixed.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-video3">
+              <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
+                <source src="static/videos/future_prediction/single_lift_rope_fixed.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-video4">
+              <video poster="" id="video4" controls muted loop height="100%" preload="metadata">
+                <source src="static/videos/future_prediction/single_push_rope_fixed.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            More visual results of action-conditioned future prediction compared with PhysTwin. Our method’s predicted positions
+            show closer alignment with ground truth compared to PhysTwin.
+          </h2>
+          <img src="static/figures/big_table.png" alt="Research Teaser Image" style="width:100%; max-height:500px; object-fit:contain;">
+          <h2 class="subtitle has-text-centered">
+            Quantitative results on action-conditioned future prediction and inference speed (FPS). Best
+            metric values are bolded, while second-best ones are underlined. The metrics demonstrate both the accuracy
+            and effectiveness of PhysWorld in both predicting motion and generating realistic images.
+          </h2>
+        </div>
+      </div>
+    </section>
+    <!-- End comparison carousel -->
+
+    <!-- Unseen interaction -->
+    <section class="hero is-small">
+      <div class="hero-body">
+        <div class="container">
+          <h2 class="title is-3">Unseen Interaction</h2>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-video1">
+              <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
+                <source src="static/videos/unseen_interaction/rope_unseen_compose_fixed.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-video2">
+              <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
+                <source src="static/videos/unseen_interaction/sloth_unseen_compose_fixed.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            Generalization to unseen interactions. As representative examples, we consider two unseen interaction scenarios: lifting a pushed rope and rotating a lifted sloth. The results show that
+            PhysWorld generates physically plausible predictions, while PhysTwin suffers from artifacts such as
+            fracture-like rope distortions and unnatural foot folding.
+          </h2>
+        </div>
+      </div>
+    </section>
+    <!-- End unseen interaction -->
+     
+    <!-- End planning -->
+
+    <!-- End BibTeX -->
+
+  </main>
+
+  <!-- Statcounter tracking code removed -->
+
+</body>
+</html>
+```
