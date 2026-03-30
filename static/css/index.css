@@ -316,6 +316,7 @@ body {
   margin-bottom: 2rem !important;
   position: relative;
   padding-bottom: 1rem;
+  text-align: center !important;
 }
 
 .title.is-3::after {

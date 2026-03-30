@@ -121,7 +121,7 @@
 
               <!-- Authors (anonymized) -->
               <div class="is-size-5 publication-authors">
-                <span class="author-block">Anonymous Authors</span>
+                <span class="author-block">ICML Anonymous Authors 6423</span>
               </div>
 
               <!-- Institutions removed for anonymity -->
@@ -204,6 +204,42 @@
           </h2>
         </div>
       </div>
+
+      <div class="hero-body">
+        <div class="container">
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-video1">
+              <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
+                <source src="static/videos/future_prediction/double_lift_sloth_fixed.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-video2">
+              <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
+                <source src="static/videos/future_prediction/double_lift_zebra_fixed.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-video3">
+              <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
+                <source src="static/videos/future_prediction/single_lift_rope_fixed.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-video4">
+              <video poster="" id="video4" controls muted loop height="100%" preload="metadata">
+                <source src="static/videos/future_prediction/single_push_rope_fixed.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            Figure B: Visual results of action-conditioned future prediction compared with PhysTwin. Our method’s predicted positions
+            show closer alignment with ground truth compared to PhysTwin.
+          </h2>
+          <!-- <h2 class="subtitle has-text-centered">
+            Quantitative results on action-conditioned future prediction and inference speed (FPS). Best
+            metric values are bolded, while second-best ones are underlined. The metrics demonstrate both the accuracy
+            and effectiveness of PhysWorld in both predicting motion and generating realistic images.
+          </h2> -->
+        </div>
+      </div>
     </section>
     <!-- End Video Comparison Slider -->
 
@@ -239,11 +275,11 @@
             show closer alignment with ground truth compared to PhysTwin.
           </h2>
           <img src="static/figures/big_table.png" alt="Research Teaser Image" style="width:100%; max-height:500px; object-fit:contain;">
-          <h2 class="subtitle has-text-centered">
+          <!-- <h2 class="subtitle has-text-centered">
             Quantitative results on action-conditioned future prediction and inference speed (FPS). Best
             metric values are bolded, while second-best ones are underlined. The metrics demonstrate both the accuracy
             and effectiveness of PhysWorld in both predicting motion and generating realistic images.
-          </h2>
+          </h2> -->
         </div>
       </div>
     </section> -->
@@ -267,7 +303,7 @@
             </div>
           </div>
           <h2 class="subtitle has-text-centered">
-            Figure B: Generalization to unseen interactions. As representative examples, we consider two unseen interaction scenarios: lifting a pushed rope and rotating a lifted sloth. The results show that
+            Figure C: Generalization to unseen interactions. As representative examples, we consider two unseen interaction scenarios: lifting a pushed rope and rotating a lifted sloth. The results show that
             PhysWorld generates physically plausible predictions, while PhysTwin suffers from artifacts such as
             fracture-like rope distortions and unnatural foot folding.
           </h2>
@@ -393,6 +429,10 @@
               </tbody>
             </table>
           </div>
+          <br>
+          <h2 class="subtitle has-text-centered">
+            Table D: Comparison between PhysWorld and recent/concurrent works in world models and physical simulation.
+          </h2>
           <div class="related-work-references">
             <p>[1] Whitney, William F., et al. "Learning 3d particle-based simulators from rgb-d videos.", 2023.</p>
             <p>[2] Whitney, William F., et al. "Modeling the real world with high-density visual particle dynamics.", 2024.</p>
