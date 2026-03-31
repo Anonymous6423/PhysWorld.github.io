@@ -194,13 +194,14 @@
               </div>
 
               <!-- Labels -->
-              <div class="compare-label compare-label-left">Without Points</div>
-              <div class="compare-label compare-label-right">With Points</div>
+              <div class="compare-label compare-label-left">With Point Trajectories</div>
+              <div class="compare-label compare-label-right">Without Point Trajectories</div>
             </div>
           </div>
 
           <h2 class="subtitle has-text-centered">
-            Figure A: Visual results of action-conditioned future prediction. Drag the slider to compare predictions with and without GNN point visualization.
+            Figure A: Visual results of action-conditioned future prediction. 
+            Drag the slider to compare predictions with and without visualization of point trajectories predicted by GNNs. (The consistent coloring of points and trajectories is intended solely for enhanced visualization and carries no underlying significance. The lower-opacity segments represent the ground truth motion of the object.)
           </h2>
         </div>
       </div>
@@ -328,7 +329,7 @@
           </h2>
             <img src="static/figures/ablation_study/3.png" alt="Ablation Study 3" style="width:60%; object-fit:contain;">
             <h2 class="subtitle has-text-centered">
-            Table C: Ablation study on the impact of interaction video length (number of frames) on prediction performance.
+            Table C: Ablation study on the impact of interaction video number on prediction performance.
           </h2>
           </div>
         </div>
@@ -348,11 +349,11 @@
                   <th>Method</th>
                   <th>Date</th>
                   <th>State Representation</th>
-                  <th>Model Architecture</th>
-                  <th>Physical Prior</th>
+                  <th>Prediction Model</th>
+                  <th>Inference Speed</th>
                   <th>Real Data Dependency</th>
                   <th>Deformable Dynamics</th>
-                  <th>Spatially Varying Properties</th>
+                  <th>Physical Property Embedded in Models</th>
                 </tr>
               </thead>
               <tbody>
@@ -361,8 +362,8 @@
                   <td>2023.12</td>
                   <td>3D latent particles</td>
                   <td>Graph Neural Networks</td>
-                  <td><span class="tag-none">None (Data-driven)</span></td>
-                  <td>High (Multi-view RGB-D videos)</td>
+                  <td>Slow</td>
+                  <td>High (Hundreds of Multi-view RGB-D videos)</td>
                   <td><span class="tag-yes">Yes</span></td>
                   <td><span class="tag-no">No (Implicit)</span></td>
                 </tr>
@@ -371,78 +372,87 @@
                   <td>2024.06</td>
                   <td>Dense 3D latent particles</td>
                   <td>Point Cloud Transformer</td>
-                  <td><span class="tag-none">None (Data-driven)</span></td>
-                  <td>High (Large-scale bi-manual interaction data)</td>
+                  <td>Slow</td>
+                  <td>High (Large-scale bi-manual interaction data, about 1.6TB)</td>
                   <td><span class="tag-no">No</span></td>
                   <td><span class="tag-no">No (Implicit)</span></td>
+                </tr>
+                  <tr>
+                  <td><strong>PhysTwin[7]</strong></td>
+                  <td>2025.03</td>
+                  <td>3D Points</td>
+                  <td>Mass-Spring Simulator</td>
+                  <td>Slow</td>
+                  <td>Low (Multi-view RGB-D videos of only 1 trajectory under 10s)</td>
+                  <td><span class="tag-yes">Yes</span></td>
+                  <td><span class="tag-yes">Yes (Spatially non-uniform)</span></td>
                 </tr>
                 <tr>
                   <td><strong>3DGSim [3]</strong></td>
                   <td>2025.08</td>
-                  <td>3DGS</td>
+                  <td>3D Gaussian Splatting</td>
                   <td>Transformer</td>
-                  <td><span class="tag-none">None (Data-driven)</span></td>
-                  <td>High (Multi-view RGB videos)</td>
+                  <td>Slow</td>
+                  <td>High (Multi-view RGB videos, 200 trajectories per object)</td>
                   <td><span class="tag-yes">Yes</span></td>
                   <td><span class="tag-no">No (Implicit)</span></td>
                 </tr>
                 <tr>
                   <td><strong>GWM [4]</strong></td>
                   <td>2025.09</td>
-                  <td>3DGS</td>
+                  <td>3D Gaussian Splatting (3DGS)</td>
                   <td>Diffusion Transformer</td>
-                  <td><span class="tag-none">None (Data-driven)</span></td>
-                  <td>High (Massive offline trajectories)</td>
+                  <td>Slow</td>
+                  <td>High (50 human demonstrations and 3000 generated demonstrations for each task)</td>
                   <td><span class="tag-no">No</span></td>
                   <td><span class="tag-no">No (Implicit)</span></td>
                 </tr>
                 <tr>
-                  <td><strong>PointWorld [5]</strong></td>
+                  <td><strong>PointWorld [5]*</strong></td>
                   <td>2026.01</td>
                   <td>3D Point Flows</td>
                   <td>Point Transformer v3</td>
-                  <td><span class="tag-none">None (Data-driven)</span></td>
+                  <td>Slow</td>
                   <td>High (~2M real &amp; sim trajectories)</td>
                   <td><span class="tag-yes">Yes</span></td>
                   <td><span class="tag-no">No (Implicit)</span></td>
                 </tr>
                 <tr>
-                  <td><strong>GaussTwin [6]</strong></td>
+                  <td><strong>GaussTwin [6]*</strong></td>
                   <td>2026.03</td>
                   <td>Particles bonded to 3DGS</td>
                   <td>PBD Simulator</td>
-                  <td><span class="tag-partial">Explicit (PBD + Cosserat rod)</span></td>
+                  <td>Slow</td>
                   <td>Low (Online visual correction)</td>
-                  <td><span class="tag-yes">Yes</span></td>
-                  <td><span class="tag-no">No (Assumes known/uniform)</span></td>
+                  <td><span class="tag-partial">Yes (Only deformable linear objects like ropes)</span></td>
+                  <td><span class="tag-partial">Yes (Assumes known/uniform properties)</span></td>
                 </tr>
                 <tr class="row-ours">
                   <td><strong>PhysWorld (Ours)</strong></td>
                   <td><strong>2026.03</strong></td>
                   <td><strong>3D Points</strong></td>
                   <td><strong>Graph Neural Networks</strong></td>
-                  <td><span class="tag-yes">Explicit (MPM)</span></td>
-                  <td><strong>Low (Multi-view RGB-D videos under 10s)</strong></td>
+                  <td>Slow</td>
+                  <td><strong>Low (Multi-view RGB-D videos of only 1 trajectory under 10s)</strong></td>
                   <td><span class="tag-yes">Yes</span></td>
-                  <td><span class="tag-yes">Yes (Explicitly modeled)</span></td>
+                  <td><span class="tag-yes">Yes (Spatially non-uniform)</span></td>
                 </tr>
               </tbody>
             </table>
           </div>
           <br>
           <h2 class="subtitle has-text-centered">
-            Table D: Comparison between PhysWorld and recent/concurrent works in world models and physical simulation.
+            Table D: Comparison between PhysWorld and related works in world models and physical simulation.
           </h2>
           <div class="related-work-references">
-            <p>[1] Whitney, William F., et al. "Learning 3d particle-based simulators from rgb-d videos.", 2023.</p>
-            <p>[2] Whitney, William F., et al. "Modeling the real world with high-density visual particle dynamics.", 2024.</p>
-            <p>[3] Zhobro, Mikel, et al. "Learning 3d-gaussian simulators from rgb videos.", 2025.</p>
-            <p>[4] Lu, Guanxing, et al. "Gwm: Towards scalable gaussian world models for robotic manipulation.", 2025.</p>
-            <p>[5] Huang, Wenlong, et al. "PointWorld: Scaling 3D World Models for In-The-Wild Robotic Manipulation.", 2026.</p>
-            <p>[6] Cai, Yichen, et al. "GaussTwin: Unified Simulation and Correction with Gaussian Splatting for Robotic Digital Twins.", 2026.</p>
+            <p><em>* Concurrent works</em></p>
+            <p>[1] Whitney, William F., et al. "Learning 3d particle-based simulators from rgb-d videos.", ICLR 2024.</p>
+            <p>[2] Whitney, William F., et al. "Modeling the real world with high-density visual particle dynamics.", CoRL 2024.</p>
+            <p>[3] Zhobro, Mikel, Andreas René Geist, and Georg Martius. "Learning 3d-gaussian simulators from rgb videos." arXiv preprint arXiv:2503.24009 (2025).</p>
+            <p>[4] Lu, Guanxing, et al. "Gwm: Towards scalable gaussian world models for robotic manipulation.", ICCV 2025.</p>
+            <p>[5] Huang, Wenlong, et al. "PointWorld: Scaling 3D World Models for In-The-Wild Robotic Manipulation." arXiv preprint arXiv:2601.03782 (2026).</p>
+            <p>[6] Cai, Yichen, et al. "GaussTwin: Unified Simulation and Correction with Gaussian Splatting for Robotic Digital Twins." arXiv preprint arXiv:2603.05108 (2026).</p>
           </div>
-        </div>
-      </div>
     </section>
     <!-- End Related Work Comparison -->
 
