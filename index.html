@@ -313,6 +313,36 @@
     </section>
     <!-- End unseen interaction -->
 
+    <section class="hero is-small">
+      <div class="hero-body">
+        <div class="container">
+          <h2 class="title is-3">Comparison with Video World Models</h2>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-video1">
+              <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
+                <source src="static/videos/VWM_compare/dinosor.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-video2">
+              <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
+                <source src="static/videos/VWM_compare/rope.mp4" type="video/mp4">
+              </video>
+            </div>
+              <div class="item item-video3">
+              <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
+                <source src="static/videos/VWM_compare/sloth.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            Figure D: Comparative experiments with WoW-DiT-7B[8] and Cosmos-7B[9]. The qualitative results reveal that using these 
+            two video world models to predict object motion easily introduces hallucinations and artifacts, 
+            producing completely unreasonable results.
+          </h2>
+        </div>
+      </div>
+    </section>
+
     <!-- Ablation Studies -->
     <section class="hero is-small">
       <div class="hero-body">
@@ -362,80 +392,80 @@
                   <td>2023.12</td>
                   <td>3D latent particles</td>
                   <td>Graph Neural Networks</td>
-                  <td>Slow</td>
-                  <td>High (Hundreds of Multi-view RGB-D videos)</td>
+                  <td><span class="tag-no">Slow</span></td>
+                  <td><span class="tag-no">High</span> (Hundreds of Multi-view RGB-D videos)</td>
                   <td><span class="tag-yes">Yes</span></td>
-                  <td><span class="tag-no">No (Implicit)</span></td>
+                  <td><span class="tag-no">No</span> (Implicit)</td>
                 </tr>
                 <tr>
                   <td><strong>HD-VPD [2]</strong></td>
                   <td>2024.06</td>
                   <td>Dense 3D latent particles</td>
                   <td>Point Cloud Transformer</td>
-                  <td>Slow</td>
-                  <td>High (Large-scale bi-manual interaction data, about 1.6TB)</td>
+                  <td><span class="tag-no">Slow</span></td>
+                  <td><span class="tag-no">High</span>(Large-scale bi-manual interaction data, about 1.6TB)</td>
                   <td><span class="tag-no">No</span></td>
-                  <td><span class="tag-no">No (Implicit)</span></td>
+                  <td><span class="tag-no">No</span> (Implicit)</td>
                 </tr>
                   <tr>
                   <td><strong>PhysTwin[7]</strong></td>
                   <td>2025.03</td>
                   <td>3D Points</td>
                   <td>Mass-Spring Simulator</td>
-                  <td>Slow</td>
-                  <td>Low (Multi-view RGB-D videos of only 1 trajectory under 10s)</td>
+                  <td><span class="tag-partial">Medium</span></td>
+                  <td><span class="tag-yes">Low</span> (Multi-view RGB-D videos of only 1 trajectory under 10s)</td>
                   <td><span class="tag-yes">Yes</span></td>
-                  <td><span class="tag-yes">Yes (Spatially non-uniform)</span></td>
+                  <td><span class="tag-yes">Yes</span> (Spatially non-uniform)</td>
                 </tr>
                 <tr>
                   <td><strong>3DGSim [3]</strong></td>
                   <td>2025.08</td>
                   <td>3D Gaussian Splatting</td>
                   <td>Transformer</td>
-                  <td>Slow</td>
-                  <td>High (Multi-view RGB videos, 200 trajectories per object)</td>
+                  <td><span class="tag-no">Slow</span></td>
+                  <td><span class="tag-no">High</span> (Multi-view RGB videos, 200 trajectories per object)</td>
                   <td><span class="tag-yes">Yes</span></td>
-                  <td><span class="tag-no">No (Implicit)</span></td>
+                  <td><span class="tag-no">No</span> (Implicit)</td>
                 </tr>
                 <tr>
                   <td><strong>GWM [4]</strong></td>
                   <td>2025.09</td>
                   <td>3D Gaussian Splatting (3DGS)</td>
                   <td>Diffusion Transformer</td>
-                  <td>Slow</td>
-                  <td>High (50 human demonstrations and 3000 generated demonstrations for each task)</td>
+                  <td><span class="tag-no">Slow</span></td>
+                  <td><span class="tag-no">High</span> (50 human demonstrations and 3000 generated demonstrations for each task)</td>
                   <td><span class="tag-no">No</span></td>
-                  <td><span class="tag-no">No (Implicit)</span></td>
+                  <td><span class="tag-no">No</span> (Implicit)</td>
                 </tr>
                 <tr>
                   <td><strong>PointWorld [5]*</strong></td>
                   <td>2026.01</td>
                   <td>3D Point Flows</td>
                   <td>Point Transformer v3</td>
-                  <td>Slow</td>
-                  <td>High (~2M real &amp; sim trajectories)</td>
+                  <td><span class="tag-no">Slow</span></td>
+                  <td><span class="tag-no">High</span> (~2M real &amp; sim trajectories)</td>
                   <td><span class="tag-yes">Yes</span></td>
-                  <td><span class="tag-no">No (Implicit)</span></td>
+                  <td><span class="tag-no">No</span> (Implicit)</td>
                 </tr>
                 <tr>
                   <td><strong>GaussTwin [6]*</strong></td>
                   <td>2026.03</td>
                   <td>Particles bonded to 3DGS</td>
                   <td>PBD Simulator</td>
-                  <td>Slow</td>
-                  <td>Low (Online visual correction)</td>
-                  <td><span class="tag-partial">Yes (Only deformable linear objects like ropes)</span></td>
-                  <td><span class="tag-partial">Yes (Assumes known/uniform properties)</span></td>
+                  <td><span class="tag-partial">Medium</span></td>
+                  <td><span class="tag-yes">Low</span> (Online visual correction)</td>
+                  <td><span class="tag-partial">Yes</span> (Only deformable linear objects like ropes)</td>
+                  <td><span class="tag-partial">Yes</span> (Assumes known/uniform properties)</td>
                 </tr>
                 <tr class="row-ours">
                   <td><strong>PhysWorld (Ours)</strong></td>
                   <td><strong>2026.03</strong></td>
                   <td><strong>3D Points</strong></td>
                   <td><strong>Graph Neural Networks</strong></td>
-                  <td>Slow</td>
-                  <td><strong>Low (Multi-view RGB-D videos of only 1 trajectory under 10s)</strong></td>
+                  <td><span class="tag-yes">Fast</span></td>
+                  <td><strong><span class="tag-yes">Low</span> (Multi-view RGB-D videos of only 1 trajectory under 10s)</strong></td>
                   <td><span class="tag-yes">Yes</span></td>
-                  <td><span class="tag-yes">Yes (Spatially non-uniform)</span></td>
+                  <td><span class="tag-yes">Yes</span> (Spatially non-uniform)</td>
                 </tr>
               </tbody>
             </table>
@@ -452,6 +482,9 @@
             <p>[4] Lu, Guanxing, et al. "Gwm: Towards scalable gaussian world models for robotic manipulation.", ICCV 2025.</p>
             <p>[5] Huang, Wenlong, et al. "PointWorld: Scaling 3D World Models for In-The-Wild Robotic Manipulation." arXiv preprint arXiv:2601.03782 (2026).</p>
             <p>[6] Cai, Yichen, et al. "GaussTwin: Unified Simulation and Correction with Gaussian Splatting for Robotic Digital Twins." arXiv preprint arXiv:2603.05108 (2026).</p>
+            <p>[7] Jiang, Hanxiao, et al. "Phystwin: Physics-informed reconstruction and simulation of deformable objects from videos.", ICCV 2025.</p>
+            <p>[8] Chi, Xiaowei, et al. "Wow: Towards a world omniscient world model through embodied interaction." arXiv preprint arXiv:2509.22642 (2025).</p>
+            <p> [9] Agarwal, Niket, et al. "Cosmos world foundation model platform for physical ai." arXiv preprint arXiv:2501.03575 (2025). </p>
           </div>
     </section>
     <!-- End Related Work Comparison -->
