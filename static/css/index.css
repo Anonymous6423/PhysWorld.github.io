@@ -882,10 +882,59 @@ a:focus {
   padding: 0.75rem 0.65rem;
   font-weight: 600;
   text-align: left;
-  white-space: nowrap;
   font-size: 0.8rem;
   letter-spacing: 0.02em;
   color: #ffffff;
+}
+
+/* Column widths for 9-column table */
+.related-work-table th:nth-child(1),
+.related-work-table td:nth-child(1) { /* Method */
+  width: 12%;
+  white-space: nowrap;
+}
+
+.related-work-table th:nth-child(2),
+.related-work-table td:nth-child(2) { /* Date */
+  width: 6%;
+  white-space: nowrap;
+}
+
+.related-work-table th:nth-child(3),
+.related-work-table td:nth-child(3) { /* State Representation */
+  width: 13%;
+}
+
+.related-work-table th:nth-child(4),
+.related-work-table td:nth-child(4) { /* Prediction Model */
+  width: 13%;
+}
+
+.related-work-table th:nth-child(5),
+.related-work-table td:nth-child(5) { /* Task Scope */
+  width: 10%;
+  white-space: nowrap;
+}
+
+.related-work-table th:nth-child(6),
+.related-work-table td:nth-child(6) { /* Inference Speed */
+  width: 8%;
+  white-space: nowrap;
+}
+
+.related-work-table th:nth-child(7),
+.related-work-table td:nth-child(7) { /* Real Data Dependency */
+  width: 16%;
+}
+
+.related-work-table th:nth-child(8),
+.related-work-table td:nth-child(8) { /* Deformable Dynamics */
+  width: 9%;
+}
+
+.related-work-table th:nth-child(9),
+.related-work-table td:nth-child(9) { /* Physical Property */
+  width: 13%;
 }
 
 .related-work-table td {

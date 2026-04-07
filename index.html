@@ -399,7 +399,7 @@
           <br>
           <h2 class="subtitle has-text-centered">
             Figure F: Qualitative results using strictly monocular video input. The figure illustrates the prediction performance of our pipeline on the <strong>single_lift_rope</strong> scene when restricted to a single camera view during the preprocessing and 3DGS construction stages. 
-            While the limited monocular field of view inherently reduces the visual clarity of the reconstructed 3DGS compared to the standard multi-view setup, the predicted physical motion trajectory of the object remains highly accurate. 
+            While the limited monocular field of view inherently reduces the visual clarity of the reconstructed 3DGS compared to the standard multi-view setup (shown in <strong>Figure A</strong>), the predicted physical motion trajectory of the object remains highly accurate. 
           </h2>
         </div>
       </div>
@@ -443,6 +443,7 @@
                   <th>Date</th>
                   <th>State Representation</th>
                   <th>Prediction Model</th>
+                  <th>Task Scope</th>
                   <th>Inference Speed</th>
                   <th>Real Data Dependency</th>
                   <th>Deformable Dynamics</th>
@@ -455,6 +456,7 @@
                   <td>2023.12</td>
                   <td>3D latent particles</td>
                   <td>Graph Neural Networks</td>
+                  <td>Cross-Object</td>
                   <td><span class="tag-no">Slow</span></td>
                   <td><span class="tag-no">High</span> (Hundreds of Multi-view RGB-D videos)</td>
                   <td><span class="tag-yes">Yes</span></td>
@@ -465,6 +467,7 @@
                   <td>2024.06</td>
                   <td>Dense 3D latent particles</td>
                   <td>Point Cloud Transformer</td>
+                  <td>Cross-Object</td>
                   <td><span class="tag-no">Slow</span></td>
                   <td><span class="tag-no">High</span>(Large-scale bi-manual interaction data, about 1.6TB)</td>
                   <td><span class="tag-no">No</span></td>
@@ -475,6 +478,7 @@
                   <td>2025.03</td>
                   <td>3D Points</td>
                   <td>Mass-Spring Simulator</td>
+                  <td>Object-Specific</td>
                   <td><span class="tag-partial">Medium</span></td>
                   <td><span class="tag-yes">Low</span> (Multi-view RGB-D videos of only 1 trajectory under 10s)</td>
                   <td><span class="tag-yes">Yes</span></td>
@@ -485,6 +489,7 @@
                   <td>2025.08</td>
                   <td>3D Gaussian Splatting (3DGS)</td>
                   <td>Transformer</td>
+                  <td>Cross-Object</td>
                   <td><span class="tag-no">Slow</span></td>
                   <td><span class="tag-no">High</span> (Multi-view RGB videos, 200 trajectories per object)</td>
                   <td><span class="tag-yes">Yes</span></td>
@@ -495,6 +500,7 @@
                   <td>2025.09</td>
                   <td>3D Gaussian Splatting</td>
                   <td>Diffusion Transformer</td>
+                  <td>Cross-Object</td>
                   <td><span class="tag-no">Slow</span></td>
                   <td><span class="tag-no">High</span> (50 human demonstrations and 3000 generated demonstrations for each task)</td>
                   <td><span class="tag-no">No</span></td>
@@ -505,6 +511,7 @@
                   <td>2026.01</td>
                   <td>3D Point Flows</td>
                   <td>Point Transformer v3</td>
+                  <td>Cross-Object</td>
                   <td><span class="tag-no">Slow</span></td>
                   <td><span class="tag-no">High</span> (~2M real &amp; sim trajectories)</td>
                   <td><span class="tag-yes">Yes</span></td>
@@ -515,9 +522,10 @@
                   <td>2026.03</td>
                   <td>Particles bonded to 3DGS</td>
                   <td>PBD Simulator</td>
+                  <td>Object-Specific</td>
                   <td><span class="tag-partial">Medium</span></td>
                   <td><span class="tag-yes">Low</span> (Online visual correction)</td>
-                  <td><span class="tag-partial">Yes</span> (Only deformable linear objects like ropes)</td>
+                  <td><span class="tag-partial">Yes</span><br><small style="font-size:0.75em; color:var(--text-secondary);">(Only deformable linear<br>objects like ropes)</small></td>
                   <td><span class="tag-partial">Yes</span> (Assumes known/uniform properties)</td>
                 </tr>
                 <tr class="row-ours">
@@ -525,6 +533,7 @@
                   <td><strong>2026.03</strong></td>
                   <td><strong>3D Points</strong></td>
                   <td><strong>Graph Neural Networks</strong></td>
+                  <td>Object-Specific</td>
                   <td><span class="tag-yes">Fast</span></td>
                   <td><strong><span class="tag-yes">Low</span> (Multi-view RGB-D videos of only 1 trajectory under 10s)</strong></td>
                   <td><span class="tag-yes">Yes</span></td>
