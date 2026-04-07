@@ -168,6 +168,16 @@
             <button class="scene-btn" data-scene="single_push_rope">single_push_rope</button>
             <button class="scene-btn" data-scene="single_push_rope_1">single_push_rope_1</button>
             <button class="scene-btn" data-scene="single_push_rope_4">single_push_rope_4</button>
+            <button class="scene-btn" data-scene="double_lift_cloth_1">double_lift_cloth_1</button>
+            <button class="scene-btn" data-scene="double_stretch_sloth">double_stretch_sloth</button>
+            <button class="scene-btn" data-scene="rope_double_hand">rope_double_hand</button>
+            <button class="scene-btn" data-scene="single_clift_cloth_1">single_clift_cloth_1</button>
+            <button class="scene-btn" data-scene="single_lift_cloth">single_lift_cloth</button>
+            <button class="scene-btn" data-scene="single_lift_cloth_3">single_lift_cloth_3</button>
+            <button class="scene-btn" data-scene="single_lift_cloth_4">single_lift_cloth_4</button>
+            <button class="scene-btn" data-scene="single_lift_zebra">single_lift_zebra</button>
+            <button class="scene-btn" data-scene="single_push_sloth">single_push_sloth</button>
+            <button class="scene-btn" data-scene="weird_package">weird_package</button>
           </div>
 
           <!-- Comparison container -->
@@ -342,6 +352,59 @@
         </div>
       </div>
     </section>
+
+    <section class="hero is-small">
+      <div class="hero-body">
+        <div class="container">
+          <h2 class="title is-3">Cross-object Transferability</h2>
+          <div class="columns is-vcentered">
+            <div class="column">
+              <div style="display:flex; justify-content:center;">
+                <video poster="" controls muted loop autoplay style="max-width:100%; height:auto;" preload="metadata">
+                  <source src="static/videos/transfer/single_lift_cloth_4.mp4" type="video/mp4">
+                </video>
+              </div>
+              <p class="has-text-centered">Left: single_lift_cloth_4</p>
+            </div>
+            <div class="column">
+              <div style="display:flex; justify-content:center;">
+                <video poster="" controls muted loop autoplay style="max-width:100%; height:auto;" preload="metadata">
+                  <source src="static/videos/transfer/double_lift_zebra.mp4" type="video/mp4">
+                </video>
+              </div>
+              <p class="has-text-centered">Right: double_lift_zebra</p>
+            </div>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            Figure E: Qualitative results of cross-object transferability via fine-tuning.
+            The figure illustrates the prediction performance of PhysWorld when adapting to new objects.
+            (Left) A model pre-trained on the <strong>single_lift_cloth_3 (shown in Figure A)</strong> scene is fine-tuned and evaluated on the unseen <strong>single_lift_cloth_4</strong> scene.
+            (Right) A model pre-trained on <strong>double_lift_sloth (shown in Figure A)</strong> is fine-tuned and evaluated on <strong>double_lift_zebra</strong>. 
+            The visual results demonstrate that our framework maintains robust dynamics prediction capabilities and enables rapid deployment on novel, similar objects through efficient fine-tuning, avoiding the need to retrain the entire pipeline from scratch.
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- Monocular Experiment -->
+    <section class="hero is-small">
+      <div class="hero-body">
+        <div class="container">
+          <h2 class="title is-3">Robustness to Monocular Input</h2>
+          <div style="display:flex; justify-content:center; align-items:center;">
+            <video poster="" controls muted loop autoplay style="max-width:100%; height:auto;" preload="metadata">
+              <source src="static/videos/monocular/single_lift_rope.mp4" type="video/mp4">
+            </video>
+          </div>
+          <br>
+          <h2 class="subtitle has-text-centered">
+            Figure F: Qualitative results using strictly monocular video input. The figure illustrates the prediction performance of our pipeline on the <strong>single_lift_rope</strong> scene when restricted to a single camera view during the preprocessing and 3DGS construction stages. 
+            While the limited monocular field of view inherently reduces the visual clarity of the reconstructed 3DGS compared to the standard multi-view setup, the predicted physical motion trajectory of the object remains highly accurate. 
+          </h2>
+        </div>
+      </div>
+    </section>
+    <!-- End Monocular Experiment -->
 
     <!-- Ablation Studies -->
     <section class="hero is-small">
